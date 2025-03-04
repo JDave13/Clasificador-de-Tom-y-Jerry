@@ -1,1 +1,7 @@
-# Clasificador-de-Tom-y-Jerry
+## Aspectos Positivos
+
+El modelo muestra una evolución positiva general, logrando una buena precisión final de 78.63% en validación en su mejor época (23). La implementación del early stopping funcionó adecuadamente, evitando mayor sobreajuste al detener el entrenamiento en la época 28 y restaurar los pesos a la mejor época. El modelo clasifica con alta precisión las categorías "tom" y "tom_jerry_0", como se evidencia en las matrices de confusión, y muestra una tendencia de aprendizaje constante con la pérdida de entrenamiento disminuyendo gradualmente de 2.58 a 0.51, demostrando que el modelo está aprendiendo los patrones de los datos.
+
+## Aspectos a Mejorar
+
+El modelo presenta una significativa inestabilidad en las primeras 10 épocas, con fluctuaciones extremas en la pérdida de validación (hasta 9.76) y exactitud, lo que indica problemas en la inicialización o en la tasa de aprendizaje. Existe un claro desequilibrio en el rendimiento entre clases, con "jerry" frecuentemente confundido con "tom_jerry_0" (133 casos en entrenamiento y 41 en prueba), lo que sugiere un probable desequilibrio en la distribución de datos o características insuficientes para distinguir estas categorías. La divergencia entre las curvas de entrenamiento y validación después de la época 23 señala un creciente sobreajuste, indicando que se necesitan técnicas de regularización como dropout, aumento de datos para las clases problemáticas o un ajuste en la arquitectura del modelo para mejorar su capacidad de generalización.
